@@ -1,16 +1,16 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import MainStack from './src/Stacks/MainStack.js';
 
-import userContextProvider from './src/context/UserContext';
+import UserContextProvider from './src/context/UserContext';
+import MainStack from './src/Stacks/MainStack';
 
 export default () => {
   return(
-    <userContextProvider>
+    <UserContextProvider>
       <NavigationContainer>
           <MainStack />
       </NavigationContainer>
-    </userContextProvider>
+    </UserContextProvider>
     
   );
 }
