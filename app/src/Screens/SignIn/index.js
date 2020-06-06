@@ -1,5 +1,5 @@
-import React from 'react';
-import { Text } from 'react-native';
+import React, {useState} from 'react';
+
 import {
     Container,
     InputArea, 
@@ -17,6 +17,10 @@ import EmailIcon from '../../assets/email.svg';
 import LockIcon from '../../assets/lock.svg';
 
 export default () => {
+
+    const [emailField, SetEmailField] = useState('');
+    const [passworldField, SetPassworldField] = useState('');
+
     return(
         <Container>
             <BarberLogo width="100%" height="160"/>
@@ -26,6 +30,8 @@ export default () => {
 <SignInput
     IconSvg={EmailIcon}
     placeholder="Digite seu e-mail"
+    value={emailField}
+    onChangeText={t => SetEmailField(t)}
         
 />
 
@@ -33,7 +39,8 @@ export default () => {
     IconSvg={LockIcon}
     placeholder="Digite sua senha"
     password={true}
-       
+    value={passworldField}
+    onChangeText={t => SetPassworldField(t)}       
 />
 
 <CustomButton >
